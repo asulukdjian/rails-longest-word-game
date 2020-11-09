@@ -1,0 +1,15 @@
+<h1>*************Now your result*************</h1>
+<h2>The letters was <%= @letter %></h2>
+
+<h3>Your word is <%= params[:result] %></h3>
+<h3>Your score is <%= @count %></h3>
+<h3><%= @try_again %></h3>
+
+
+<% if @exist['found'] == true %>
+  <p>Congrats your score is <%= @exist['length'] %> </p>
+<% else %>
+  <p>Sorry, your word do not exist</p>
+<% end %>
+
+<%= link_to "New game ?", new_path %>

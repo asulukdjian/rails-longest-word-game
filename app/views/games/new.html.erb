@@ -1,0 +1,18 @@
+<h1>*************Welcome to The game*************</h1>
+
+<h2>New game</h2>
+
+<ul id=listletter>
+  <% @letters.each do |letter| %>
+  <li><%= letter.capitalize %></li>
+  <% end %>
+</ul>
+
+<h2>What is your longest word?</h2>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :@letter %>
+  <input type="text" name="result">
+  <input type="submit" value="<%= params[:result] %>Your word">
+</form>
